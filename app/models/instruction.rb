@@ -1,4 +1,4 @@
 class Instruction < ActiveRecord::Base
-  belongs_to :recipe
+  belongs_to :recipebox
   belongs_to :Ingredient
 end
