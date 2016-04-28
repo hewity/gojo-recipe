@@ -4,18 +4,18 @@
 
   <div class="col-md-2">
     <section class="user_info center">
-      <%= gravator_for recipebox.user, size: 100 %>
-      <h5> User name: <%= recipebox.user.username %></h5>
+
+
 
     </section>
   </div>
   <div class="col-lg-6 well">
     <h4><%= link_to recipebox.title, recipebox_path(recipebox)  %></h4>
     <p>
-      <span class='quiet'> <$= time_ago_in_words(recipebox.created_at) %> ago <small></span></p>
+      <span class='quiet'> <%= time_ago_in_words(recipebox.created_at) %> ago <small></span></p>
       </div>
       <div class="col-md-4">
-        <%= image_tag(recipe.picture.url, size: "250x150", class: "gravator") if recipe.picture? %>
+
       </div>
       <% end %>
       <hr>

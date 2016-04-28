@@ -1,23 +1,21 @@
-<%= render 'shared/page_title', title: @recipe.name %>
+<%= render 'shared/page_title', title: @recipebox.title %>
 
 <div class="row">
   <div class="col-md-4 pull-right center">
-    <%= gravator_for @recipebox.user, size 200 %>
     <p>
-      <h5>Brought to you by: <%= @recipebox.username %></h5>
     </p>
   </div>
   <div class="col-md--8">
-    <%= link_to"Edit this Recipe", edit_path(@recipebox), class: "btn btn-successpull-right" %>
-    <h3><5= @recipebox.summary %></h3>
+    <%= link_to"Edit this Recipe", edit_recipebox_path(@recipebox), class: "btn btn-success pull-right" %>
+    <h3><%= @recipebox.instruction %></h3>
     <div class="show_recipebox">
-      <%= image_tag(@recipebox.picture.url, class: "gravator") if @recipebox.picture? %>
+      <%= image_tag(@recipebox.picture.url, class: "gravatar") if @recipebox.picture? %>
     </div>
     <div class="well">
       <p>
         <strong>Steps:</strong>
       </p>
-        <%= simple-format(@recipebox.instrucitons) %>
+        <%= simple_format(@recipebox.instruction) %>
     </div>
 
   </div>

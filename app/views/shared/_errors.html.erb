@@ -1,9 +1,9 @@
-<% if object.errors.any? %>
+<% if @recipebox.errors.any? %>
 <div class="row">
   <div class="alert alert-danger col-md-8 col-md-offset-2">
     <h5>Please correct the following errors:</h5>
     <ul>
-      <% object.errors.full_messages.each do |message| %>
+      <% @recipebox.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>

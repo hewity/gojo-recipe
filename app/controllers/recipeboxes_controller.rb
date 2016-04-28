@@ -22,7 +22,7 @@ class RecipeboxesController < ApplicationController
     #sending notification so that the user can see the message
     if @recipebox.save
       flash[:success] = "You have created your recipe successfully!"
-      redirect_to recipeboxes_path
+      redirect_to @recipebox
     else
       flash[:notice] = "Invalid Recipe. Please try again."
       render 'new'
@@ -33,6 +33,7 @@ end
 def edit
   @recipebox = Recipebox.find(params[:id])
 end
+
 def update
   @recipebox = Recipebox.find(params[:id])
   if @recipebox.update(recipebox_params)
