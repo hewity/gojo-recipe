@@ -1,0 +1,33 @@
+<%= render 'shared/page_title', title: @recipe.name %>
+
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <%= gravator_for @recipebox.user, size 200 %>
+    <p>
+      <h5>Brought to you by: <%= @recipebox.username %></h5>
+    </p>
+  </div>
+  <div class="col-md--8">
+    <%= link_to"Edit this Recipe", edit_path(@recipebox), class: "btn btn-successpull-right" %>
+    <h3><5= @recipebox.summary %></h3>
+    <div class="show_recipebox">
+      <%= image_tag(@recipebox.picture.url, class: "gravator") if @recipebox.picture? %>
+    </div>
+    <div class="well">
+      <p>
+        <strong>Steps:</strong>
+      </p>
+        <%= simple-format(@recipebox.instrucitons) %>
+    </div>
+
+  </div>
+</div>
+
+<h5><%= link_to "Back to Recipe Listings", recipeboxes_path, class: "btn btn-warning btn-small" %></h5>
+
+
+
+
+
+<!-- <%= link_to 'Edit', edit_recipebox_path(@recipebox) %>
+<%= link_to "Delete", @recipebox, method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"} %> -->

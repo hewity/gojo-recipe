@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-  root to: "recipeboxes#index"
+  root 'recipeboxes#index'
+  get '/home/:id', to: 'pages#home'
+  # get 'recipeboxes/edit', to: "recipeboxes#index"
+  # get '/recipeboxes', to: 'recipeboxes#index'
+  # get '/recipeboxes/new', to: 'recipeboxes#new', as: 'new_recipebox'
+  # post '/recipeboxes', to: 'recipeboxes#create'
+  # get '/recipeboxes/:id/edit', to: 'recipeboxes#edit', as: 'edit_recipebox'
+  # pach '/recipeboxes/:id', to: 'recipeboxes#update'
+  # get 'recipeboxes/:id', to: 'recipeboxes'
+  # delete '/recipeboxes/:id', to: 'recipeboxes#destroy'
+
   resources :recipeboxes
-  resources :ingredients
-  resources :instructions
+
+  # resources :instructions
 
   # get "recipes" =>"recipes#index"
 

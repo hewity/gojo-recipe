@@ -1,0 +1,39 @@
+<% render 'shared/errors', object: @recipebox %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for(@recipebox) do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %><br></br>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :prep_time %>
+      <%= f.number_field :prep_time, class: 'form-control' %><br></br>
+      </div
+
+      <div class="form-group">
+        <%= f.label :cooking_time %>
+        <%= f.number_field :cooking_time, class: 'form-control' %><br></br>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ingredient %>
+        <%= f.text_area :ingredient, class: 'form-control'%><br></br>
+      </div>
+      <div class="form-group">
+        <%= f.label :instruction %>
+        <%= f.text_area :instruction, raws: 10%><br></br>
+        <span>class="picture">
+          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        </span>
+      </div>
+      <%= f.submit(@recipebox.new_record? ? 'Create Recipe' : 'Edit Recipe', class: "btn btn-success") %>
+
+    </div>
+
+  </div>
+
+
+  <% end %>
