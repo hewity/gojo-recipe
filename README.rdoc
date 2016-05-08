@@ -1,4 +1,15 @@
-== README
+testing specs for recipeboxes:
+title: string
+ingredient: string
+instruction: text
+
+- title must be present
+-title must be between 5 characters and less than 50 characters
+-instruction must be present
+-instruction must be between 20 characters and less than 300 characters
+-ingredient must be present
+-ingredient must be between 20 characters an less than 200 characters.
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

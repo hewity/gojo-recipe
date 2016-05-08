@@ -2,8 +2,9 @@
 
 <div class="row">
   <div class="col-md-4 pull-right center">
-    <p>
-    </p>
+  <%= gravatar_for @recipebox.user, size: 200 %>
+    <p><h5>Brought to you by: <%= @recipebox.user.username %></h5></p>
+
   </div>
   <div class="col-md--8">
     <%= link_to"Edit this Recipe", edit_recipebox_path(@recipebox), class: "btn btn-success pull-right" %>
@@ -21,7 +22,7 @@
   </div>
 </div>
 
-<h5><%= link_to "Back to Recipe Listings", recipeboxes_path, class: "btn btn-warning btn-small" %></h5>
+<h5><%= link_to "Return to Recipe Listings", recipeboxes_path, class: "btn btn-warning btn-small" %></h5>
 
 
 

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'gravatar_image_tag', '~> 1.2'
+gem "cancan"
 
 gem 'gravatar', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

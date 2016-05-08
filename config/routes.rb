@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
+  resources :recipeboxes
+
   root 'recipeboxes#index'
   get '/home/:id', to: 'pages#home'
+  scope :path => '/posts', :controller => :posts do
+  get 'show/(:id)' => :show, :as => 'show_post'
+end
   # get 'recipeboxes/edit', to: "recipeboxes#index"
   # get '/recipeboxes', to: 'recipeboxes#index'
   # get '/recipeboxes/new', to: 'recipeboxes#new', as: 'new_recipebox'
   # post '/recipeboxes', to: 'recipeboxes#create'
   # get '/recipeboxes/:id/edit', to: 'recipeboxes#edit', as: 'edit_recipebox'
-  # pach '/recipeboxes/:id', to: 'recipeboxes#update'
+  # # pach '/recipeboxes/:id', to: 'recipeboxes#update'
   # get 'recipeboxes/:id', to: 'recipeboxes'
   # delete '/recipeboxes/:id', to: 'recipeboxes#destroy'
 
-  resources :recipeboxes
 
   # resources :instructions
 

@@ -6,6 +6,7 @@ class RecipeboxesController < ApplicationController
 
   def show
     @recipebox = Recipebox.find(params[:id])
+    authorize! :read, @recipebox
   end
 
   def new
@@ -15,7 +16,6 @@ class RecipeboxesController < ApplicationController
   def create
     @user = User.new(user_params)
   end
-
 
   def create
     @recipebox = Recipebox.new(params[:recipebox].permit(:title, :text))
@@ -43,6 +43,8 @@ def update
     flash[:notice] = " Please try again."
     render 'create'
   end
+end
+def email
 end
 
 
